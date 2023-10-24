@@ -86,6 +86,9 @@ body {
 .templatemo-site-header.sticky {
   height: 47px;
 }
+.header.sticky .templatemo-site-name {
+  font-size: 34px;
+}
 .templatemo-site-name {
   margin-top: 0;
   margin-bottom: 0;
@@ -97,9 +100,7 @@ body {
 .header .templatemo-site-name {
   font-size: 60px;
 }
-.header.sticky .templatemo-site-name {
-  font-size: 34px;
-}
+
 .templatemo-site-name > span {
   display: inline-block;
   vertical-align: middle;
