@@ -52,7 +52,7 @@
           </h1>
           <nav class="hidden-xs templatemo-nav">
             <ul class="menu-holder">
-              <li class="active"><a href="#home">HOME</a></li>
+              <li><a class="active" href="#home">HOME</a></li>
               <li><a href="#about">ABOUT</a></li>
               <li><a href="#services">SERVICES</a></li>
               <li><a href="#products">PRODUCTS</a></li>
@@ -551,10 +551,9 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.1/jquery.jcarousel.min.js"></script>
-
     <script>
       $(document).ready(function () {
-        $(".jcarousel").jcarousel(); // Initialize the jCarousel
+        $(".jcarousel").jcarousel();
 
         $(".jcarousel-control-prev").jcarouselControl({
           target: "-=1",
@@ -568,24 +567,26 @@
     <script>
       const responsiveMenu = document.getElementById("responsive-menu");
       const mobileMenu = document.getElementById("mobile_menu");
-
+      const links = document.querySelectorAll(".menu-holder>li>a");
+      const header = document.querySelector(".header");
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 50) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      });
       mobileMenu.addEventListener("click", function () {
         responsiveMenu.classList.toggle("menu");
       });
-    </script>
-
-    <script src="/cmp.js"></script>
-    <script>
-      window.googletag = window.googletag || { cmd: [] };
-      googletag.cmd.push(function () {
-        var interstitialSlot = googletag.defineOutOfPageSlot(
-          "/147246189,22381294811/templatemo.com_interstitial",
-          googletag.enums.OutOfPageFormat.INTERSTITIAL
-        );
-        if (interstitialSlot) interstitialSlot.addService(googletag.pubads());
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-        googletag.display(interstitialSlot);
+      links.forEach((element) => {
+        element.addEventListener("click", () => {
+          links.forEach((item) => {
+            item.classList.remove("active");
+          });
+          element.classList.add("active");
+        });
       });
     </script>
   </body>

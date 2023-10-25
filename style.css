@@ -33,7 +33,14 @@ body {
 }
 
 /* hamburger */
-
+.active {
+  border-left: 1px solid #865701;
+  border-top: 1px solid #865701;
+  border-right: 1px solid #865701;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-image: url("	https://templatemo.com/templates/templatemo_440_brownie/images/body-bg.png");
+}
 .high {
   padding-top: 49px;
   right: -30000px;
@@ -81,13 +88,23 @@ body {
   top: 0;
   width: 100%;
   z-index: 2000;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid #865701;
 }
-.templatemo-site-header.sticky {
+
+.header.sticky {
   height: 47px;
 }
 .header.sticky .templatemo-site-name {
   font-size: 34px;
+  height: 45px;
+}
+.header.sticky .templatemo-nav {
+  margin-top: 20px;
+}
+.header.sticky .templatemo-nav ul li a {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 .templatemo-site-name {
   margin-top: 0;
@@ -96,6 +113,7 @@ body {
   display: flex;
   align-items: center;
   font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
 .header .templatemo-site-name {
   font-size: 60px;
@@ -116,7 +134,7 @@ body {
 }
 .header .templatemo-nav {
   transition: all 0.3s ease;
-  margin-top: 40px;
+  margin-top: 48px;
 }
 .templatemo-nav ul li {
   float: left;
